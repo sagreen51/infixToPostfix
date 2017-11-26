@@ -1,10 +1,9 @@
 
 local list  = {}
 temp = {}
-newList = {}
 
 local function push(value)
-	table.insert(list,value)
+	table.insert(str,value)
 end
 local function pop(index) table.remove(str,index)end
 
@@ -17,8 +16,5 @@ function InfixToPostfix(str)
 	pop(i)
 	end
 	end
-	temp = str
-	table.concat(temp,list)
-	str = temp
 	return str
 end
