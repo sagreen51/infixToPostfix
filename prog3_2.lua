@@ -10,12 +10,12 @@ local function pop(index) table.remove(str,index)end
 
 function InfixToPostfix(str)
 	list[0] = " "
-	for i = 0, strlen(str)-1, 1 do 
-	if str[i] == '+' or str[i] =='-'
+	for i = 0, string.len(str)-1, 1 do 
+	if str[i] == "+" or str[i] =='-'
 	push(str[i])
 	pop(i)
 	end
 	end
-	strcat(str,list)
+	table.concat(str,list)
 	return str,19
 end
