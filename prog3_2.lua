@@ -17,6 +17,8 @@ function InfixToPostfix(str)
 	pop(i)
 	end
 	end
-	table.concat(str,list)
+	temp = str
+	table.concat(temp,list)
+	str = temp
 	return str
 end
