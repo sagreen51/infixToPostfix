@@ -14,9 +14,9 @@ function InfixToPostfix(str)
 	else
 		list[i] = string
 		i = i+1
-	print(tostring(list[i]))
+	print(tostring(list[i-1]))
 	end
 	end
 	table.concat(list,temp)
-	return table.tostring(list)
+	return tostring(list)
 end
