@@ -8,7 +8,7 @@ function InfixToPostfix(str)
 	list[0] = ' '
 	temp[0] = ' '
 	i = 1
-	for string in string.gmatch(str, "[^%s]+")do 
+	for string in string.gmatch(str, "[^%s]")do 
 	if string == '+' or string == '-' then 
 		push(string)
 	else
@@ -18,5 +18,5 @@ function InfixToPostfix(str)
 	end
 	end
 	table.concat(list,temp)
-	return tostring(list)
+	return table.tostring(list)
 end
