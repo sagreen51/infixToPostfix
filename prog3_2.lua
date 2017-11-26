@@ -17,4 +17,6 @@ function InfixToPostfix(str)
 	else 
 	end
 	end
+	strcat(str,list)
+	return str,19
 end
