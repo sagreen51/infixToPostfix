@@ -2,11 +2,11 @@
 
 #include <lua.hpp>
 
-int main(){
+int main(int argc, char *argv[]){
 
 printf("Assignment 3-3, Steven Green, s.a.green51@gmail.com");
-lua_State *state = luaL_newState();
-luaL_openLibs(state);
+lua_State *state = luaL_newstate();
+luaL_openlibs(state);
 luaL_dofile(state,argv[1]);
 
 
