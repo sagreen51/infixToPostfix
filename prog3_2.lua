@@ -12,7 +12,9 @@ function InfixToPostfix(str)
 
 	if temp == '+' or temp == '-' then
 		push(temp)  
-	else strcat(newList,temp) strcat(newList, " ") 
+	else
+		 strcat(newList,temp)
+		 strcat(newList, " ") 
 	end
 	end
 	total = 19
