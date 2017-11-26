@@ -14,7 +14,7 @@ function InfixToPostfix(str)
 	else
 		list[i] = string
 		i = i+1
-	print(tostring(list[i-1]))
+	end
 	end
 	end
 	return table.concat(list," ")
