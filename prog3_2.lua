@@ -13,7 +13,8 @@ function InfixToPostfix(str)
 	else then
 		list[i] = str
 		i = i+1
-	end 
+	print(list[i])
+	end
 	end
 	return tostring(list)
 end
