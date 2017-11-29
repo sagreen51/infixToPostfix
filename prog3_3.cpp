@@ -1,6 +1,7 @@
 #include <stdio.h>
 
 #include <lua.hpp>
+#include <InfixToPostfix.lua>
 
 int main(int argc, char *argv[]){
 
