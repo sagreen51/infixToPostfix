@@ -9,6 +9,7 @@ lua_State *state = luaL_newstate();
 luaL_openlibs(state);
 luaL_dofile(state,argv[1]);
 
-
+char str[] = InfixToPostfix(state);
+printf("%c",str);
 return 0;
 }
