@@ -10,11 +10,13 @@ lua_State *state = luaL_newstate();
 luaL_openlibs(state);
 luaL_dofile(state,argv[1]);
 
-lua_getGlobal(state, InfixToPostfix);
+lua_getglobal(state,"InfixToPostfix");
 lua_pushstring(state,argv[1]);
 lua_call(state, 1, 1);
-const char (state);
+char str[] = lua_tolstring(state);
 
+printf("%c",str);
+lua_close(state);
 
 return 0;
 }
