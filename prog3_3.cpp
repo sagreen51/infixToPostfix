@@ -1,7 +1,9 @@
+
 #include <stdio.h>
 
 #include <lua.hpp>
-#include "prog3_2.lua"
+
+#include <prog3_3.lua>
 
 int main(int argc, char *argv[]){
 
@@ -14,3 +16,5 @@ char str[] = InfixToPostfix(state);
 printf("%c",str);
 return 0;
 }
+
+
