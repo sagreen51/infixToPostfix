@@ -13,7 +13,7 @@ luaL_dofile(state,argv[1]);
 lua_getglobal(state,"InfixToPostfix");
 lua_pushstring(state,argv[1]);
 lua_call(state, 1, 1);
-const char *str = lua_tolstring(state,0);
+const char *str = lua_tolstring(state,0,sizeof(state));
 
 printf("%c",str);
 lua_close(state);
