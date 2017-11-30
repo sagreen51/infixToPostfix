@@ -1,5 +1,5 @@
 list  = {}
-temp = {}
+temp[]
 
 --local function push(value)table.insert(temp,value)end
 
@@ -11,7 +11,7 @@ function InfixToPostfix(str)
 	j = 1
 	for string in string.gmatch(str, "[^%s+]")do 
 	if string == '+' or string == '-' then 
-		temp[j]= '+'
+		temp[j]= string
 		j = j+1
 	else
 		list[i] = string
