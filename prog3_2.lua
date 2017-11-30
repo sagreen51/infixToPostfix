@@ -18,7 +18,7 @@ function InfixToPostfix(str)
 		i = i+1
 	end
 	end
-	z=0
+	z=1
 	while z < j do
 	list[i] = temp[z]
 	z =z +1
