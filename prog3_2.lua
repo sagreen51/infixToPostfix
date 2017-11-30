@@ -19,12 +19,6 @@ function InfixToPostfix(str)
 		i = i+1
 	end
 	end
-	z=1
-	while (z < j) do
-	table.insert(list,temp[z]) 
-	z = z +1
-	end
---	table.concat(list,table.concat(temp," "))
-	print(temp[1])
+	table.concat(list,table.concat(temp," "))
 	return table.concat(list," ")
 end
