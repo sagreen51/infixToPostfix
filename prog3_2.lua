@@ -1,5 +1,5 @@
 list  = {}
-temp[]
+temp = {}
 
 local function push(value)table.insert(temp,value)end
 
@@ -16,7 +16,7 @@ function InfixToPostfix(str)
 		i = i+1
 	end
 	end
-	table.concat(list,temp)
+	table.concat(list,tostring(temp))
 	table.concat(list," ")
 	rVal = table.tostring(list)
 	return rVal
