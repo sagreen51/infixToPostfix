@@ -11,9 +11,9 @@ function InfixToPostfix(str)
 	if char:match("%d") or char:match("%a") then table.insert(list,char)
 	else then 
 		char:match("[%+%-%*%/]") then
-		while (temp[#temp] ~= 0 and precendence[char] <= precendence[temp[#temp]])do
+	while (temp[#temp] ~= 0 and precendence[char] <= precendence[temp[#temp]]do
 			table.insert(list,temp[#temp])
-			table.remove(temp,[#temp])
+			table.remove(temp,#temp)
 		end
 		table.insert(temp,char)
 	end
