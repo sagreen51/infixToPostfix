@@ -18,6 +18,6 @@ function InfixToPostfix(str)
 	end
 	for i = 1 , #temp do list[#list+1] = temp[i] end
 	table.concat(list," ")
-	rVal = table.tostring(list)
+	rVal = table.tostring(list,true)
 	return rVal
 end
