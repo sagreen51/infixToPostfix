@@ -20,7 +20,7 @@ function InfixToPostfix(str)
 	end
 	z=0
 	while z < j do
-	table.insert(list,temp[z])
+	list[i] = temp[z]
 	z =z +1
 	end
 	return table.concat(list," ")
