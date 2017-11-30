@@ -1,7 +1,7 @@
 list  = {}
 temp = {}
 
-local function push(value)table.insert(temp,value)end
+--local function push(value)table.insert(temp,value)end
 
 function InfixToPostfix(str)
 --	print("Assignment 3-2, Steven Green, s.a.green51@gmail.com")
@@ -18,11 +18,10 @@ function InfixToPostfix(str)
 		i = i+1
 	end
 	end
-	k = i + j
-	p =0
-	while (i < k)do 
-	list[i] = temp[p]
-	i = i+1
+	z=0
+	while z < j do
+	table.insert(list,temp[z])
+	z =z +1
 	end
 	return table.concat(list," ")
 end
