@@ -24,5 +24,6 @@ function InfixToPostfix(str)
 	z =z +1
 	i = i+1
 	end
+	table.concat(list,table.concat(temp," "))
 	return table.concat(list," ")
 end
