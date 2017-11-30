@@ -19,7 +19,7 @@ function InfixToPostfix(str)
 	end
 	end
 	z=1
-	while z < j do
+	while (z < j) do
 	list[i] = temp[z]
 	z =z +1
 	end
