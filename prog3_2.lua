@@ -9,13 +9,13 @@ function InfixToPostfix(str)
 	temp[0] = " "
 	i = 1
 	j = 1
-	for string in string.gmatch(str, "[^%s+]")do 
-	if ((string == "+") or (string == "-")) then 
-		temp[j]= string
+	for char in string.gmatch(str, "[^%s]")do 
+	if (char == "[+%-]") then 
+		temp[j]= char
 		j = j+1
 		
 	else
-		list[i] = string
+		list[i] = char
 		i = i+1
 	end
 	end
