@@ -6,9 +6,9 @@ temp = {}
 function InfixToPostfix(str)
 --	print("Assignment 3-2, Steven Green, s.a.green51@gmail.com")
 	list[0] = " "
---	temp[0] = " "
+	temp[0] = " "
 	i = 1
-	j = 0
+	j = 1
 	for string in string.gmatch(str, "[^%s+]")do 
 	if string == '+' or string == '-' then 
 		temp[j]=string
