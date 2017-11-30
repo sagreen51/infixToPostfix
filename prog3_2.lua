@@ -10,12 +10,13 @@ function InfixToPostfix(str)
 	for char in string.gmatch(str, "[^%s]")do 
 	if char:match("%d") or char:match("%a") then table.insert(list,char)
 	else then 
-		char:match("[%+%-%*%/]") then
+		if char:match("[%+%-%*%/]") then
 	while (temp[#temp] ~= 0 and precendence[char] <= precendence[temp[#temp]]do
 			table.insert(list,temp[#temp])
 			table.remove(temp,#temp)
 		end
 		table.insert(temp,char)
+		end
 	end
 	end
 	while(temp[#temp]~=nil) do 
