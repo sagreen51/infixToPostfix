@@ -5,8 +5,8 @@ local function push(value)table.insert(temp,value)end
 
 function InfixToPostfix(str)
 --	print("Assignment 3-2, Steven Green, s.a.green51@gmail.com")
-	list[0] = " "
-	temp[0] = " "
+	list[0] = ""
+	temp[0] = ""
 	i = 1
 	for string in string.gmatch(str, "[^%s+]")do 
 	if string == '+' or string == '-' then 
@@ -18,6 +18,6 @@ function InfixToPostfix(str)
 	end
 	table.concat(list,temp)
 	table.concat(list," ")
-	rVal = tostring(list)
+	rVal = table.tostring(list)
 	return rVal
 end
