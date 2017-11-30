@@ -11,7 +11,7 @@ function InfixToPostfix(str)
 	j = 1
 	for string in string.gmatch(str, "[^%s+]")do 
 	if string == '+' or string == '-' then 
-		temp[j]=string
+		temp[j]= '+'
 		j = j+1
 	else
 		list[i] = string
