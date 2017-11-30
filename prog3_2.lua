@@ -8,9 +8,10 @@ function InfixToPostfix(str)
 	list[0] = " "
 	temp[0] = " "
 	i = 1
+	j = 1
 	for string in string.gmatch(str, "[^%s+]")do 
 	if string == '+' or string == '-' then 
-		push(string)
+		temp[j]=string
 	else
 		list[i] = string
 		i = i+1
