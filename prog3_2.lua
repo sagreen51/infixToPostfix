@@ -10,7 +10,7 @@ function InfixToPostfix(str)
 	i = 1
 	j = 1
 	for char in string.gmatch(str, "[^%s]")do 
-	if (char == "[+%-]") then 
+	if (char: "[+%-]") then 
 		temp[j]= char
 		j = j+1
 		
