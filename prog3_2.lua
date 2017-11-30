@@ -5,12 +5,10 @@ local precendence = {["+"] = 2;["-"] = 2; ["*"] =3;["/"]=3}
 
 function InfixToPostfix(str)
 --	print("Assignment 3-2, Steven Green, s.a.green51@gmail.com")
-	list[0] = " "
-	temp[0] = " "
 	for char in string.gmatch(str, "[^%s]")do 
 	if char== ("%d") or char == ("%a") then table.insert(list,char)
-	else if char ==("[%+%-%*%/]") then
-		while (temp[#temp] ~= nil  and precendence[char] <= precendence[temp[#temp]]do
+	else if char ==("+")or char == "-" or char =="*" or char == "/" then
+		while (#temp ~= 0  and precendence[char] <= precendence[temp[#temp]]do
 			table.insert(list,temp[#temp])
 			table.remove(temp,#temp)
 		end
@@ -18,9 +16,10 @@ function InfixToPostfix(str)
 		end
 	end
 	end
-	while(temp[#temp]~=nil) do 
+	while(#temp ~= 0) do 
 		table.insert(list,temp[#temp])
 		table.remove(temp,#temp]
 	end
+	print(table.concat(list," ")
 	return table.concat(list," ")
 end
