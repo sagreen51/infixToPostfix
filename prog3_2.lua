@@ -10,7 +10,7 @@ function InfixToPostfix(str)
 	for char in string.gmatch(str, "[^%s]")do 
 	if char== ("%d") or char == ("%a") then table.insert(list,char)
 	else if char ==("+")or char == "-" or char =="*" or char == "/" then
-		while (#temp ~= 0  and precendence[char] <= precendence[temp[#temp]]do
+		while (#temp ~= 0  and precendence[char] <= precendence[temp[#temp]])do
 			table.insert(list,temp[#temp])
 			table.remove(temp,#temp)
 		end
@@ -22,6 +22,6 @@ function InfixToPostfix(str)
 		table.insert(list,temp[#temp])
 		table.remove(temp,#temp]
 	end
-	print("%s",table.concat(list," ")
+--	print("%s",table.concat(list," ")
 	return table.concat(list," ")
 end
