@@ -19,6 +19,7 @@ function InfixToPostfix(str)
 		i = i+1
 	end
 	end
-	return table.concat(list,table.concat(temp," "))
---	return table.concat(list," ")
+	str= table.concat(temp, " ")
+	table.insert(list,str)
+	return table.concat(list," ")
 end
