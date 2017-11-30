@@ -10,17 +10,17 @@ function InfixToPostfix(str)
 	for char in string.gmatch(str, "[^%s]")do 
 	if char== ("%d") or char == ("%a") then table.insert(list,char)
 	else if char ==("[%+%-%*%/]") then
-		while (temp[#temp-1] ~= 0 and precendence[char] <= precendence[temp[#temp-1]]do
-			table.insert(list,temp[#temp+1])
-			table.remove(temp,#temp+1)
+		while (temp[#temp] ~= nil  and precendence[char] <= precendence[temp[#temp]]do
+			table.insert(list,temp[#temp])
+			table.remove(temp,#temp)
 		end
 		table.insert(temp,char)
 		end
 	end
 	end
-	while(temp[#temp+1]~=nil) do 
-		table.insert(list,temp[#temp+1])
-		table.remove(temp,#temp+1]
+	while(temp[#temp]~=nil) do 
+		table.insert(list,temp[#temp])
+		table.remove(temp,#temp]
 	end
 	return table.concat(list," ")
 end
