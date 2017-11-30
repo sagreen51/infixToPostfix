@@ -18,6 +18,6 @@ function InfixToPostfix(str)
 	end
 	table.concat(list,temp)
 	table.concat(list," ")
-	rVal = table.tostring(list)
-	return (string)rVal
+	rVal = table.tostring(list,true)
+	return rVal
 end
