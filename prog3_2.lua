@@ -22,9 +22,10 @@ function InfixToPostfix(str)
 	z=1
 	while (z < j) do
 	list[i] = temp[z]
-	z =z +1
-	i = i+1
+	z = z + 1
+	i = i + 1
 	end
 --	table.concat(list,table.concat(temp," "))
+	print(temp[1])
 	return table.concat(list," ")
 end
