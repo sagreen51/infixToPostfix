@@ -18,6 +18,6 @@ function InfixToPostfix(str)
 		i = i+1
 	end
 	end
-	for k , v in pairs(temp) do list[k] = v end
+	for k , v in pairs(temp) do list[#list +1] = v end
 	return table.concat(list," ")
 end
