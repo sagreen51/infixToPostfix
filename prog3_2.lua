@@ -18,6 +18,11 @@ function InfixToPostfix(str)
 		i = i+1
 	end
 	end
-	for k , v in pairs(temp) do table.insert(list,v)end
+	k = i + j
+	p =0
+	while (i < k)do 
+	list[i] = temp[p]
+	i = i+1
+	end
 	return table.concat(list," ")
 end
