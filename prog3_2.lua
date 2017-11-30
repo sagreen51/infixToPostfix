@@ -1,5 +1,5 @@
 list  = {}
-temp[]
+temp[]= " "
 
 --local function push(value)table.insert(temp,value)end
 
