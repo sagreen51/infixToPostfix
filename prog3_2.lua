@@ -17,7 +17,7 @@ function InfixToPostfix(str)
 	end
 	end
 	for i = 1 , #temp do list[#list+1] = temp[i] end
-	table.concat(list," ")
-	string = table.tostring(list[, -1])
+	string = table.concat(list," ")
+--	string = table.tostring(list[, -1])
 	return string
 end
