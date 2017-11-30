@@ -8,9 +8,9 @@ function InfixToPostfix(str)
 --	list[0] = " "
 --	temp[0] = " "
 	for char in string.gmatch(str, "[^%s]")do 
-	if (char == "%d" or char == "%c") then table.insert(list,char)
+	if (char == "%d" or char == "%a") then table.insert(list,char)
 	else 
-		char:match("[%+%-%*%/]")then
+		char:"[%+%-%*%/]"then
 		while (temp[#temp] ~= 0 and precendence[char] <= precendence[temp[#temp]])do
 			table.insert(list,temp[#temp])
 			table.remove(temp,[#temp])
