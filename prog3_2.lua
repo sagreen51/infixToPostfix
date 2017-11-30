@@ -10,7 +10,7 @@ function InfixToPostfix(str)
 	i = 1
 	j = 1
 	for char in string.gmatch(str, "[^%s]")do 
-	if (char: "[+%-]") then 
+	if (char == "+" or char == "-") then 
 		temp[j]= char
 		j = j+1
 		
@@ -21,9 +21,8 @@ function InfixToPostfix(str)
 	end
 	z=1
 	while (z < j) do
-	list[i] = temp[z]
-	z = z + 1
-	i = i + 1
+	table.insert(list,temp[z]) 
+	z = z +1
 	end
 --	table.concat(list,table.concat(temp," "))
 	print(temp[1])
