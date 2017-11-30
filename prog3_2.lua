@@ -20,6 +20,6 @@ function InfixToPostfix(str)
 		table.insert(list,temp[#temp])
 		table.remove(temp,#temp]
 	end
-	print(table.concat(list," ")
+	print("%s",table.concat(list," ")
 	return table.concat(list," ")
 end
