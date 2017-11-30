@@ -10,15 +10,14 @@ function InfixToPostfix(str)
 	i = 1
 	j = 1
 	for string in string.gmatch(str, "[^%s+]")do 
-	if string == '+' or string == '-' then 
+	if string == "+" or string == "-" then 
 		temp[j]=string
+		j = j+1
 	else
 		list[i] = string
 		i = i+1
 	end
 	end
 	for i = 1 , #temp do list[#list+1] = temp[i] end
-	string = table.concat(list," ")
---	string = table.tostring(list[, -1])
-	return string
+	return table.concat(list," ")
 end
