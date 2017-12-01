@@ -15,6 +15,7 @@ local function peek()return stack[size()] end
 local function InfixToPostfix(str)
 --	print("Assignment 3-2, Steven Green, s.a.green51@gmail.com")	
 	list[1] = " "
+	stack[1] = " "
 	i = 1
 	for char in string.gmatch(str, "[^%s]"")do 
 	if char:match("%d") or char:match("a") then
@@ -25,7 +26,9 @@ local function InfixToPostfix(str)
 	while(peek()~= nil and precedence[char] <= precedence[peek()]) do
 		list[i] = pop()
 		i = i+1
-		end		
+		end	
+		push(char)
+	else then push(char) 	
 	end 
 	end
 	while (peek() ~=nil) do
