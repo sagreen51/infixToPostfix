@@ -1,5 +1,5 @@
-list  = {}
-stack = {}
+local list  = {}
+local stack = {}
 
 local precedance = {["+"] = 2;["-"] = 2; ["*"] =3;["/"]=3}
 
@@ -11,13 +11,13 @@ local function pop()
 local function size() return #stack end
 local function peek() return stack[size()] end
 
-function InfixToPostfix(str)
+local function InfixToPostfix(str)
 --	print("Assignment 3-2, Steven Green, s.a.green51@gmail.com")	
-	list[1]= " "
-	stack[1] = " "
+	list[0]= " "
+	stack[0] = " "
 	for char in string.gmatch(str, "[^%s]")do 
 	if char=="*"or char=="/"or char=="+"or char=="-" then
-		if size() == nil then push(value) 
+		if size() == nil then push(char) 
 		else if size() > 0 and precedance[char] <= precedance[peek()]
 			table.insert(list,pop())
 			push(char)
