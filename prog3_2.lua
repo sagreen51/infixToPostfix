@@ -12,8 +12,8 @@ local function pop()
 
 function InfixToPostfix(str)
 --	print("Assignment 3-2, Steven Green, s.a.green51@gmail.com")	
-	list[1]= " "
-	temp[1] = " "
+	list[1]= nil
+	temp[1] = nil
 	for char in string.gmatch(str, "[^%s]")do 
 	if char=="*"or char=="/"or char=="+"or char=="-" then
 		if stack[1] == nil then stack[1] = char 
