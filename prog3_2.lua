@@ -1,4 +1,4 @@
-list 
+list ={}
 stack = {}
 
 local precedence = {["+"] = 2;["-"] = 2; ["*"] =3;["/"]=3}
@@ -16,15 +16,15 @@ local function InfixToPostfix(str)
 --	print("Assignment 3-2, Steven Green, s.a.green51@gmail.com")	
 	list[1] = " "
 --	stack[1] = " "
-	for char in string.gmatch(str, "[^%s]")do 
-	if char:match("%d") or char:match("%a") then table.insert(list,char)
-	else if char:match("[%+%-%*%/]") then 
+	for c in string.gmatch(str, "[^%s]")do 
+	if c:match("%d") or c:match("%a") then table.insert(list,c)
+	else if c:match("[%+%-%*%/]") then 
 	
-	while(peek()~= nil and precedence[char] <= precedence[peek()]) do
+	while(peek()~= nil and precedence[c] <= precedence[peek()]) do
 		table.insert(list,pop())end
 
-		push(char)
-	else push(char) 	
+		push(c)
+	else push(c) 	
 	end 
 	end
 	while (peek() ~=nil) do	table.insert(list,pop())end 
