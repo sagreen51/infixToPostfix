@@ -5,7 +5,7 @@ local precedance = {["+"] = 2;["-"] = 2; ["*"] =3;["/"]=3}
 
 local function push(value) table.insert(stack,value) end
 local function pop()
-	local temp = table.remove(size())
+	local temp = table.remove(stack,size())
 	return temp 
 	end
 local function size() return #stack end
@@ -17,7 +17,7 @@ function InfixToPostfix(str)
 	stack[1] = " "
 	for char in string.gmatch(str, "[^%s]")do 
 	if char=="*"or char=="/"or char=="+"or char=="-" then
-		if size() ==0 then stack[1] = char 
+		if size() == nil then push(value) 
 		else if size() > 0 and precedance[char] <= precedance[peek()]
 			table.insert(list,pop())
 			push(char)
