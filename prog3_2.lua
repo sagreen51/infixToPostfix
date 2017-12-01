@@ -13,8 +13,8 @@ local function peek() return stack[size()] end
 local function InfixToPostfix(str)
 --	print("Assignment 3-2, Steven Green, s.a.green51@gmail.com")	
 
-stack = {}
-list = {}
+stack = {" "}
+list = {" "}
     
 	for c in string.gmatch(str, "[^%s]")do 
 	    if c=="+"or c=="-"or c=="*"or c=="/" then 
