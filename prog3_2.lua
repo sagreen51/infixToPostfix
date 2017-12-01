@@ -3,20 +3,20 @@ local stack = {}
 
 local precedence = {["+"] = 2;["-"] = 2; ["*"] =3;["/"]=3}
 
-local function push(value) stack[size()+1]=value end
+local function push(value)stack[size()+1]=value end
 local function pop()
 	local temp = peek()
 	table.remove(stack,size())
 	return temp 
 	end
-local function size() return #stack end
-local function peek() return stack[size()] end
+local function size()return #stack end
+local function peek()return stack[size()] end
 
 local function InfixToPostfix(str)
 --	print("Assignment 3-2, Steven Green, s.a.green51@gmail.com")	
-	list[1] = " "
-	stack[1] = " "
-	i = 1
+	list[0] = " "
+	stack[0] = " "
+	i = 0
 	for char in string.gmatch(str, "[^%s]"")do 
 	if char:match("%d") or char:match("a") then
 		list[i] = char
@@ -24,7 +24,7 @@ local function InfixToPostfix(str)
 	else if char:match("[%+%-%*%/]") then 
 	
 	while(peek()~= nil and precedence[char] <= precedence[peek()]) do
-		list[i] = pop())
+		list[i] = pop()
 		i = i+1
 		end		
 
@@ -34,7 +34,5 @@ local function InfixToPostfix(str)
 		list[i]= pop() 
 		i = i+1
 	end 
-	string = table.concat(list," ")
-	print("%s",string)
 	return table.concat(list," ")
 end 
