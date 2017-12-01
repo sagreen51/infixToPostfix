@@ -27,5 +27,5 @@ function InfixToPostfix(str)
 	end
 	string = table.concat(list," ")
 	print("%s",string)
-	return table.concat(list, " ")
+--	return table.concat(list, " ")
 end 
