@@ -1,7 +1,7 @@
 list  = {}
 stack = {}
 
-local precendence = {["+"] = 2;["-"] = 2; ["*"] =3;["/"]=3}
+local precedance = {["+"] = 2;["-"] = 2; ["*"] =3;["/"]=3}
 
 local function push(value)stack[#stack+1] = value end
 local function pop()
@@ -9,20 +9,22 @@ local function pop()
 	stack[#stack] = nil
 	return temp 
 	end
+local function size() return #stack end
+local function peek() return stack[size()] end
 
 function InfixToPostfix(str)
 --	print("Assignment 3-2, Steven Green, s.a.green51@gmail.com")	
-	list[1]= nil
-	stack[1] = nil
+	list[1]= ""
+	stack[1] = ""
 	for char in string.gmatch(str, "[^%s]")do 
 	if char=="*"or char=="/"or char=="+"or char=="-" then
-		if stack[1] == nil then stack[1] = char 
-		else if stack[1] ~= nil and precendence[char] <=precendence[stack[1]] then
-			list[#list+1] = pop()
+		if size() ==0 then stack[1] = char 
+		else if size() > 0 and precedance[char] <= precedance[peek()]
+			table.insert(list,pop())
 			push(char)
-		else then list[#list+1] = char 
+		else list[#list+1] = char 
 		end
-	else list[#list+1] = char
+	else table.insert(list,char)
 	end 
 	end
 	string = table.concat(list," ")
