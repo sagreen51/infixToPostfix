@@ -3,7 +3,7 @@ stack = {}
 
 local precendence = {["+"] = 2;["-"] = 2; ["*"] =3;["/"]=3}
 
-local function push(value)stack[#stack] = value end
+local function push(value)stack[#stack+1] = value end
 local function pop()
 	local temp = stack[#stack]
 	stack[#stack] = nil
@@ -18,7 +18,7 @@ function InfixToPostfix(str)
 	if char=="*"or char=="/"or char=="+"or char=="-" then
 		if stack[1] == nil then stack[1] = char 
 		else if stack[1] ~= nil and precendence[char] <=precendence[stack[1]] then
-			list[#list] = pop()
+			list[#list+1] = pop()
 			push(char)
 		end
 	else table.insert(list,char)
