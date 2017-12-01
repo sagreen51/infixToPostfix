@@ -29,6 +29,7 @@ local list = {}
             end    
         else 
             table.insert(list,c)
+            print(tostring.list)
 	    end 
 	end
 
