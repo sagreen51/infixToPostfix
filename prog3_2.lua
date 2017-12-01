@@ -17,7 +17,7 @@ local function InfixToPostfix(str)
 	list[1] = " "
 	stack[1] = " "
 	i = 1
-	for char in string.gmatch(str, "[^%s]"")do 
+	for char in string.gmatch(str, "[^%s]")do 
 	if char:match("%d") or char:match("%a") then
 		list[i] = char
 		i = i+1 
@@ -28,7 +28,7 @@ local function InfixToPostfix(str)
 		i = i+1
 		end	
 		push(char)
-	else then push(char) 	
+	else push(char) 	
 	end 
 	end
 	while (peek() ~=nil) do
