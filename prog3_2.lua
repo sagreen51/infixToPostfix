@@ -18,7 +18,7 @@ local function InfixToPostfix(str)
 	stack[1] = " "
 	i = 1
 	for char in string.gmatch(str, "[^%s]"")do 
-	if char:match("%d") or char:match("a") then
+	if char:match("%d") or char:match("%a") then
 		list[i] = char
 		i = i+1 
 	else if char:match("[%+%-%*%/]") then 
