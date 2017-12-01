@@ -21,7 +21,7 @@ function InfixToPostfix(str)
 			list[#list+1] = pop()
 			push(char)
 		end
-	else table.insert(list,char)
+	else list[#list+1] = char
 	end 
 	end
 	return table.concat(list, " ")
