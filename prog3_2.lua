@@ -20,10 +20,12 @@ function InfixToPostfix(str)
 		else if stack[1] ~= nil and precendence[char] <=precendence[stack[1]] then
 			list[#list+1] = pop()
 			push(char)
-		else list[#list+1] = char 
+		else then list[#list+1] = char 
 		end
 	else list[#list+1] = char
 	end 
 	end
+	string = table.concat(list," ")
+	print("%s",string)
 	return table.concat(list, " ")
 end 
