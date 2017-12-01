@@ -14,10 +14,9 @@ local function peek() return stack[size()] end
 local function InfixToPostfix(str)
 --	print("Assignment 3-2, Steven Green, s.a.green51@gmail.com")	
 	list[1]= " "
-	stack[1] = " "
 	for char in string.gmatch(str, "[^%s+]")do 
 	if char=="*"or char=="/"or char=="+"or char=="-" then
-		if size() == nil then push(char) 
+		if size() == 0 then push(char) 
 		else if size() > 0 and precedance[char] <= precedance[peek()]
 			table.insert(list,pop())
 			push(char)
