@@ -13,16 +13,16 @@ local function peek() return stack[size()] end
 
 local function InfixToPostfix(str)
 --	print("Assignment 3-2, Steven Green, s.a.green51@gmail.com")	
---	list[1] = " "
+	list[1] = " "
+	stack[1] = " "
 	for char in string.gmatch(str, "."")do 
-	if char:match("%d") or char:match("a") then push(char)
+	if char:match("%d") or char:match("a") then table.insert(list,char)
 	else if char:match("[%+%-%*%/]") then 
 	
 	while(peek()~= nil and precedence[char] <= precedence[peek()]) do
 		table.insert(list,pop())
 		end		
 
-	else then table.insert(list,char)
 	end 
 	end
 	while (peek() ~=nil) table.insert(list,pop())end 
