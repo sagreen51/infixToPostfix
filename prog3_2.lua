@@ -11,7 +11,7 @@ local function InfixToPostfix(str)
 --	print("Assignment 3-2, Steven Green, s.a.green51@gmail.com")	
 list = {" "}
 
-	for v in string.gmatch(str, "[^%s+]")do 
+	for v in string.gmatch(str, "[^%S]")do 
 	    if v=="+"or v=="-"or v=="*"or v=="/" then 
             if size() == 0 then push(v)
             else if size() ~= 0 and precedence[v] <= precedence[peek()]then 
