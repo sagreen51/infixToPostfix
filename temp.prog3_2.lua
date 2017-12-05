@@ -1,5 +1,5 @@
 local stack = {}
-list = {}
+local list = {}
 
 local precedence = {["+"] = 2;["-"] = 2; ["*"] =3;["/"]=3}
 
@@ -13,11 +13,8 @@ local function peek() return stack[size()] end
 
 local function InfixToPostfix(str)
 --	print("Assignment 3-2, Steven Green, s.a.green51@gmail.com")	
-    
-list[0] = " "
-stack[0] = " "
 
-	for k, v in string.gmatch(str, "[^%s]")do 
+	for v in str.gmatch(str, "[^%s]")do 
 	    if v=="+"or v=="-"or v=="*"or v=="/" then 
             if size() == 0 then push(v)
             if size() ~= 0 and precedence[v] <= precedence[peek()]then 

@@ -25,7 +25,7 @@ local function InfixToPostfix(str)
             else list[i] = v
                 i = i +1
             end    
-        else 
+        elseif v == "%d" or v == "%a" then
             list[i] = v
             i = i +1
         end 
