@@ -14,21 +14,21 @@ local function peek() return stack[size()] end
 local function InfixToPostfix(str)
 --	print("Assignment 3-2, Steven Green, s.a.green51@gmail.com")	
     
-	for c in string.gmatch(str, "[^%s]")do 
-	    if c=="+"or c=="-"or c=="*"or c=="/" then 
-            if stack[1] == nil then push(c)
-            if stack[1] ~= nil and precedence[c] <= precedence[peek()]then 
-                 while(stack[1] ~= nil and precedence[c] <= precedence[peek()]do 
+	for k, v in string.gmatch(str, "[^%s]")do 
+	    if v=="+"or v=="-"or v=="*"or v=="/" then 
+            if size() == 0 then push(v)
+            if size() ~= 0 and precedence[v] <= precedence[peek()]then 
+                 while(size() ~= 0 and precedence[v] <= precedence[peek()]do 
                     table.insert(list,pop())end
-                    push(c)
-            else push(c)
+                 push(v)
+            else table.insert(list,v)
             end    
         else 
-            table.insert(list,c)
+            table.insert(list,v)
 	    end 
 	end
 
-	while (stack[1] ~= nil) do table.insert(list,pop())end 
+	while (size()~= 0) do table.insert(list,pop())end 
 	return table.concat(list," ")
 end 
 
