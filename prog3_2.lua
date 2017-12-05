@@ -1,11 +1,12 @@
 local stack = {}
+local list = {}
 
 local precedence = {["+"] = 2;["-"] = 2; ["*"] =3;["/"]=3}
 
 local function push(value)table.insert(stack,value) end
-local function pop() return table.remove(stack,size())
+local function pop() return table.remove(stack,size()) end
 local function size() return #stack end--table.maxn(stack)end
-local function peek() return tostring.stack[size()] end
+local function peek() return stack[size()] end
 
 local function InfixToPostfix(str)
 --	print("Assignment 3-2, Steven Green, s.a.green51@gmail.com")	
@@ -16,7 +17,10 @@ local function InfixToPostfix(str)
             if size() == 0 then push(v)
             else if (size() ~= 0 and precedence[v] <= precedence[peek()])then 
                  while(size() ~= 0 and precedence[v] <= precedence[peek()])do 
-                    table.insert(list,pop())end
+                        table[i] = pop()
+                        i = i+1
+                 end 
+                    --table.insert(list,pop())end
                  push(v)
             else list[i] = v
                 i = i +1
@@ -27,7 +31,11 @@ local function InfixToPostfix(str)
         end 
 	end
 
-	while (size()~= 0) do table.insert(list,pop())end 
+	while (size()~= 0) do
+            list[i] = pop()
+            i = i+1
+    end
+        -- table.insert(list,pop())end 
     string = table.concat(list, " ")
 	return string
 end 
