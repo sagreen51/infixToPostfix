@@ -17,7 +17,8 @@ local function InfixToPostfix(str)
                     table.remove(stack,#stack)
                     i = i +1
                     end
-                stack[1] = c
+                if (#stack = 0) then stack[1] = c
+                else stack[#stack] =c end 
             else then stack[#stack +1] = c
             end
         else 
