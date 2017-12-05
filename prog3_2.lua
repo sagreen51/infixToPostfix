@@ -10,7 +10,7 @@ local function InfixToPostfix(str)
 
 	for c in string.gmatch(str, "[^%s]")do 
 	    if c=="+"or c=="-"or c=="*"or c=="/" then 
-            if stack[1] == nil then stack[1] = c
+            if #stack == 0 then stack[1] = c
             else if (precedence[c] <= precedence[stack[#stack]]) then 
                 while (precedence[c] <= precedence[stack[#stack]]) do 
                     list[i] = stack[#stack]
@@ -18,8 +18,8 @@ local function InfixToPostfix(str)
                     i = i +1
                     end
                 if (#stack = 0) then stack[1] = c
-                else stack[#stack] =c end 
-            else then stack[#stack +1] = c
+                else then stack[#stack+1] =c end 
+            else then stack[#stack+1] = c
             end
         else 
             list[i] = c
@@ -32,6 +32,7 @@ local function InfixToPostfix(str)
            table.remove(stack,#stack)  
            i = i+1       
     end 
+    print("%s",table.concat(list," ")
 	return table.concat(list," ")
 end 
 
