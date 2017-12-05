@@ -1,5 +1,5 @@
 local stack = {}
-local list = {}
+list = {}
 
 local precedence = {["+"] = 2;["-"] = 2; ["*"] =3;["/"]=3}
 
