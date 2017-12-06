@@ -2,8 +2,9 @@ function InfixToPostfix(str)
 --	print("Assignment 3-2, Steven Green, s.a.green51@gmail.com")	
 stack = {}
 list = {}
+precedence = {["+"] = 2;["-"] = 2; ["*"] =3;["/"]=3}
 
-	for v in str.gmatch(str, "[^%s]")do 
+	for v in string.gmatch(str, "[^%s]")do 
 	    if v=="+"or v=="-"or v=="*"or v=="/" then 
             if #stack == 0 then push(v) end
             elseif #stack ~= 0 and precedence[v] <= precedence[peek()]then 
@@ -11,10 +12,10 @@ list = {}
                     table.insert(list,pop())end
                  push(v)
             end
-            else table.insert(list,v) end
+            else then table.insert(list,v)end 
         end    
-        else table.insert(list,v) end 
-	end
+        else then table.insert(list,v) end
+    end
 if (#stack ~= 0) then 
 	while (#stack ~= 0) do table.insert(list,pop())end 
 end
@@ -22,8 +23,6 @@ end
 	return string
 end 
 
-
-local precedence = {["+"] = 2;["-"] = 2; ["*"] =3;["/"]=3}
 
 local function push(value)table.insert(stack,value) end
 local function pop() return table.remove(stack,#stack) end 
