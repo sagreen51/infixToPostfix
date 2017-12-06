@@ -3,7 +3,7 @@
 
 #include <lua.hpp>
 
-int main(int argc, char *argv[]){
+char main(int argc, char *argv[]){
 
 const char *result;
 
