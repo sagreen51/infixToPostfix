@@ -5,7 +5,7 @@
 
 int main(int argc, char *argv[]){
 
-char *result;
+const char *result;
 
 printf("Assignment #3-3, Steven Green, s.a.green51@gmail.com\n");
 lua_State *state = luaL_newstate();
