@@ -21,13 +21,9 @@ lua_getglobal(state,"InfixToPostfix");
 lua_setglobal(state,"InfixToPostfix");
 lua_pushstring(state,argv[1]);
 
-
 lua_pcall(state,1,1,0);
 s = lua_tostring(state,-1);
-//result = lua_tonumber(state,-1);
-result = 1;
-//printf("%s",s[1]);
-//printf("%d",result);
+result = lua_tonumber(state,-1);
 lua_close(state);
 return result;
 }
