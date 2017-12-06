@@ -17,10 +17,8 @@ precedence = {["+"] = 2;["-"] = 2; ["*"] =3;["/"]=3}
                  push(v)
                  end
             else table.insert(list,v)end 
-            end
         end    
         else table.insert(list,v) end
-end
     end
 if (#stack ~= 0) then 
 	while (#stack ~= 0) do table.insert(list,pop())end 
