@@ -3,9 +3,9 @@
 
 #include <lua.hpp>
 
-char main(int argc, char *argv[]){
+int main(int argc, char *argv[]){
 
-const char *result;
+int result;
 
 printf("Assignment #3-3, Steven Green, s.a.green51@gmail.com\n");
 lua_State *state = luaL_newstate();
@@ -17,8 +17,8 @@ lua_setglobal(state,"InfixToPostfix");
 lua_pushstring(state,argv[1]);
 
 lua_pcall(state,1,1,0);
-result = lua_tostring(state,-1);
-printf("%s",result);
+result = lua_tonumber(state,-1);
+printf("%d",result);
 lua_close(state);
 return result;
 }
