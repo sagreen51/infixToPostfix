@@ -1,5 +1,7 @@
-
+#include <iostream>
+#include <string>
 #include <stdio.h>
+#include <stdlib.h>
 
 #include <lua.hpp>
 
@@ -28,7 +30,7 @@ std::cout<<luaL_checkstring(state,1)<<std::endl;
 
 
 lua_close(state);
-return result;
+return 0;
 }
 
 
