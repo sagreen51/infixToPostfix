@@ -25,10 +25,11 @@ lua_pushstring(state,argv[1]);
 lua_pcall(state,1,1,0);
 s = lua_tostring(state,-1);
 //result = lua_tonumber(state,-1);
+//retult = 1;
 printf("%s\n",s);
 //printf("%d",result);
 lua_close(state);
-return s;
+return result;
 }
 
 
