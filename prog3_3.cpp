@@ -14,12 +14,12 @@ luaL_dofile(state,argv[1]);
 
 lua_setglobal(state,"InfixToPostfix");
 lua_pushstring(state,argv[1]);
-result = lua_pcall(state, 0 , 0, 0);
-sum = lua_tonumber(state,-1);
-    lua_pop(state,1);
-printf("%d",sum);
+lua_pcall(state,0,0,0);
+lua_call("InfixToPostfix");
+strcpy(state,lua_getstring(lua_getresult(1)));
+printf("%s",s);
 lua_close(state);
-return sum;
+return s;
 }
 
 
