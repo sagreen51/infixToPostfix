@@ -26,7 +26,7 @@ lua_pcall(state,1,1,0);
 s = lua_tostring(state,-1);
 //result = lua_tonumber(state,-1);
 result = 1;
-printf("%s",s[1]);
+//printf("%s",s[1]);
 //printf("%d",result);
 lua_close(state);
 return result;
