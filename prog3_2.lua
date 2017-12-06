@@ -10,17 +10,13 @@ precedence = {["+"] = 2;["-"] = 2; ["*"] =3;["/"]=3}
 
 	for v in string.gmatch(str, "[^%s]")do 
 	    if v=="+"or v=="-"or v=="*"or v=="/" then
-            if #stack == 0 then push(v) end
+            if #stack == 0 then push(v) 
             elseif #stack ~= 0 and precedence[v] <= precedence[peek()]then 
                  while(#stack ~= 0 and precedence[v] <= precedence[stack[#stack]])do 
                     table.insert(list,pop())end
                  push(v)
-                 end
-            else table.insert(list,v)end 
-            end
-        end    
-        else table.insert(list,v) end
-end
+            else table.insert(list,v)end    
+        elseif v =="%d" or v =="%a" then table.insert(list,v) end
     end
 if (#stack ~= 0) then 
 	while (#stack ~= 0) do table.insert(list,pop())end 
