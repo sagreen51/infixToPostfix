@@ -15,9 +15,9 @@ precedence = {["+"] = 2;["-"] = 2; ["*"] =3;["/"]=3}
                  while(#stack ~= 0 and precedence[v] <= precedence[stack[#stack]])do 
                     table.insert(list,pop())end
                  push(v)
-            else table.insert(list,v)end    
+            else push(v)end    
         elseif v =="%d" or v =="%a" then table.insert(list,v)
-        else push(v) end
+        else table.insert(list,v) end
     end
 if (#stack ~= 0) then 
 	while (#stack ~= 0) do table.insert(list,pop())end 
