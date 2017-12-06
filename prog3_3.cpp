@@ -3,7 +3,7 @@
 
 #include <lua.hpp>
 
-void main(int argc, char *argv[]){
+int main(int argc, char *argv[]){
 
 int result,sum;
 
@@ -19,6 +19,7 @@ sum = lua_tonumber(state,-1);
     lua_pop(state,1);
 printf("%d",sum);
 lua_close(state);
+return sum;
 }
 
 
