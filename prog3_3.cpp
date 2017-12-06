@@ -10,12 +10,7 @@ lua_State *state = luaL_newstate();
 luaL_openlibs(state);
 luaL_dofile(state,argv[1]);
 
-lua_getglobal(state,"InfixToPostfix");
-lua_pushstring(state,argv[1]);
-lua_pcall(state, 0 , LUA_MULTRET, 0);
-const char *str = lua_tostring(state,-1);
-
-printf(str);
+lua_pop(1,lua_gettop(1));
 lua_close(state);
 
 return 0;
