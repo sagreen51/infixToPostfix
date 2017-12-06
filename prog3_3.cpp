@@ -14,7 +14,7 @@ luaL_dofile(state,argv[1]);
 lua_call(state,0,0);
 
 lua_setglobal(state,"InfixToPostfix");
-lua_setstring(state,argv[1]);
+//lua_setstring(state,argv[1]);
 
 lua_call(state,1,1);
 result = lua_tonumber(state,-1);
