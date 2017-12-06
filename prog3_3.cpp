@@ -25,7 +25,7 @@ lua_gettable(state,-2);
 
 //lua_pcall(state,1,1,0);
 s = lua_tostring(state,-1);
-r//esult = lua_tonumber(state,-1);
+//esult = lua_tonumber(state,-1);
 printf("%s\n",s);
 //printf("%d",result);
 lua_close(state);
