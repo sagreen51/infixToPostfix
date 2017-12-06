@@ -18,12 +18,13 @@ luaL_openlibs(state);
 std::string inputString;
 std::getline(std::cin,inputString);
 lua_call(state,0,0);
-luaL_dofile(state,argv[1]);
+s = argv[1];
+luaL_dofile(state,s);
 lua_getglobal(state,"InfixToPostfix");
 
 
 //lua_setglobal(state,"InfixToPostfix");
-lua_pushstring(state,argv[1].c_str());
+lua_pushstring(state,s.c_str());
 
 lua_call(state,1,1);
 std::cout<<luaL_checkstring(state,1)<<std::endl;
