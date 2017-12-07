@@ -14,21 +14,21 @@ char *s = argv[1];
 luaL_dofile(state,s);
 lua_pcall(state,0,0,0);
 
-//std::string inputString;
-//std::getline(std::cin,inputString);
-const char *inputString;
-fgets(inputString,strlen(s),stdin);
+std::string inputString;
+std::getline(std::cin,inputString);
+//char *inputString;
+//fgets(inputString,strlen(s),stdin);
 
 lua_getglobal(state,"InfixToPostfix");
 
 //lua_setglobal(state,"InfixToPostfix");
-lua_pushstring(state,inputString);//.c_str()
+lua_pushstring(state,inputString.c_str());//.c_str()
 
 lua_pcall(state,1,1,0);
 char *output = lua_tostring(state,1);
-printf("%a",&output);
+printf("%s",&output);
 std::cout<<output<<std::endl;
-std::cout<<lua_tostring(state,1)<<std::endl;
+std::cout<<lua_checkstring(state,2)<<std::endl;
 
 
 lua_close(state);
