@@ -30,7 +30,7 @@ lua_pcall(state,1,1,0);
 //char *output = lua_tostring(state,1);
 //printf("%s",output);
 //std::cout<<output<<std::endl;
-std::cout<<lua_checkstring(state,-1)<<std::endl;
+std::cout<<lua_tostring(state,-1)<<std::endl;
 
 
 lua_close(state);
