@@ -22,10 +22,10 @@ lua_getglobal(state,"InfixToPostfix");
 
 
 //lua_setglobal(state,"InfixToPostfix");
-lua_pushstring(state,inputString);
+lua_pushstring(state,inputString.c_str());
 
 lua_call(state,1,1);
-std::cout<<luaL_getstring(state,-1)<<std::endl;
+std::cout<<lua_getstring(state,-1)<<std::endl;
 
 
 lua_close(state);
