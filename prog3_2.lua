@@ -3,7 +3,7 @@ local function pop() return table.remove(stack,#stack) end
 local function peek() return stack[#stack] end
 
 function InfixToPostfix(str)
-	print("Assignment 3-2, Steven Green, s.a.green51@gmail.com")	
+--	print("Assignment 3-2, Steven Green, s.a.green51@gmail.com")	
 stack = {}
 list = {}
 precedence = {["+"] = 2;["-"] = 2; ["*"] =3;["/"]=3}
