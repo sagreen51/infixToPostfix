@@ -16,7 +16,7 @@ lua_pcall(state,0,0,0);
 
 //std::string inputString;
 //std::getline(std::cin,inputString);
-char *inputString;
+const char *inputString;
 fgets(inputString,null,stdin);
 
 lua_getglobal(state,"InfixToPostfix");
