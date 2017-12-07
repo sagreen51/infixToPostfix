@@ -12,15 +12,16 @@ printf("Assignment #3-3, Steven Green, s.a.green51@gmail.com\n");
 lua_State *state = luaL_newstate();
 luaL_openlibs(state);
 char *s = argv[1];
-luaL_dofile(state,s);
-lua_pcall(state,0,0,0);
 
+luaL_dofile(state,s);
 std::string inputString;
 std::getline(std::cin,inputString);
+lua_getglobal(state,"InfixToPostfix");
+
+
 //char *inputString;
 //gets(inputString);
 
-lua_getglobal(state,"InfixToPostfix");
 //lua_setglobal(state,"InfixToPostfix");
 
 lua_pushstring(state,inputString.c_str());//.c_str()
