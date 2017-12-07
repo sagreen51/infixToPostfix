@@ -4,7 +4,7 @@
 #include <stdlib.h>
 
 #include <lua.hpp>
-#include <lual.hpp>
+
 
 int main(int argc, char *argv[]){
 
@@ -29,7 +29,7 @@ lua_pcall(state,1,1,0);
 //char *output = lua_tostring(state,1);
 //printf("%s",&output);
 //std::cout<<output<<std::endl;
-std::cout<<lual_checkstring(state,1)<<std::endl;
+std::cout<<lua_checkstring(state,-1)<<std::endl;
 
 
 lua_close(state);
