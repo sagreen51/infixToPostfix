@@ -26,8 +26,6 @@ end
 	return string
 end 
 
-print(InfixToPostfix("3 + 5 * 6 / 2 + 1"))
-print("test")
 
 
 
