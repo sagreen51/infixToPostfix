@@ -25,6 +25,7 @@ lua_pushstring(state,inputString.c_str());
 
 lua_pcall(state,1,1,0);
 std::string output = lua_tostring(state,1);
+printf("%d",&output);
 std::cout<<output<<std::endl;
 std::cout<<lua_tostring(state,1)<<std::endl;
 
