@@ -25,7 +25,8 @@ lua_getglobal(state,"InfixToPostfix");
 lua_pushstring(state,inputString.c_str());
 
 lua_call(state,1,1);
-std::cout<<lua_checkstring(state,2)<<std::endl;
+strd::string output = lua_tostring(state,1);
+std::cout<<lua_tostring(state,2)<<std::endl;
 
 
 lua_close(state);
