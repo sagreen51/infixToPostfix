@@ -1,5 +1,5 @@
 
-Program 1: C++ program that takes a single command line argument which is the name of a lua file. Then creates a lua enviroment and loads the libraries for the lua state. Then loads the lua file. 
+createLuaState: C++ program that takes a single command line argument which is the name of a lua file. Then creates a lua enviroment and loads the libraries for the lua state. Then loads the lua file. 
     Compiled like so: g++ prog3_1.cpp -o prog3_1 -I lua-5.3.4/src -L lua-5.3.4/src -l lua -l m -l dl 
 
 Program 2: Lua program that takes a single string arguement. Tokenize it by spaces then apply the infix to postfix algorithm. 
